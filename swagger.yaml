@@ -1,0 +1,155 @@
+openapi: 3.0.0
+info:
+  title: enhancement apis
+  version: 1.0.0
+servers:
+  - url: https://enhancment-zuzxy6kx2a-uc.a.run.app
+  - url: http://localhost:8080
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+paths:
+  /v1/get-my-profile-details:
+    get:
+      tags:
+        - General
+      summary: my profile details
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /v1/add-profile-details:
+    post:
+      tags:
+        - General
+      summary: add profile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: temporary
+                bio: nothing much
+                phone: +91 62389e329
+                photo: photo link
+                is_public: true
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /v1/loginThroughGoogle:
+    post:
+      tags:
+        - General
+      summary: login through google
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: temporary@gmail.com
+                name: '{{$randomFirstName}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /v1/login:
+    post:
+      tags:
+        - General
+      summary: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: temporary@gmail.com
+                password: temp
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /v1/change-role:
+    patch:
+      tags:
+        - General
+      summary: role change
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: anudeep4n@gmail.com
+                is_public: true
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /v1/update-profile:
+    patch:
+      tags:
+        - General
+      summary: update profile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: temporary@gmail.com
+                is_public: true
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /v1/register:
+    post:
+      tags:
+        - General
+      summary: register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                username: temporary
+                email: temporary@gmail.com
+                password: temp
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /v1/get-all-user-profile-details:
+    get:
+      tags:
+        - General
+      summary: all profile details
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
